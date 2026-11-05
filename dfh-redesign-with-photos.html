@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="brass">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DFH – Redesign Concepts</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&family=Noto+Serif+Bengali:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0b0c;--bg2:#141416;--card:#1b1b1e;--line:#2a2a2e;--tx:#f2f0ea;--mut:#9b9a94;--ac:#c9a24b;--acx:#0b0b0c;--hf:'Noto Serif Bengali',Georgia,serif;--bf:'Tiro Bangla','Noto Serif Bengali',serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+[data-theme=teal]{--bg:#0a1112;--bg2:#101a1c;--card:#16232526;--card:#152225;--line:#243538;--ac:#3fb8a8;--acx:#06100f}
+[data-theme=paper]{--bg:#f4f1ea;--bg2:#ebe7dd;--card:#fff;--line:#d8d3c6;--tx:#111;--mut:#625f57;--ac:#8c1c24;--acx:#fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 16px/1.6 var(--bf);transition:background .3s}
+a{color:inherit;text-decoration:none}
+.w{max-width:1120px;margin:0 auto;padding:0 20px}
+.bar{background:#000;color:#eee;font-size:13px;padding:8px 0;position:sticky;top:0;z-index:30;border-bottom:1px solid #222}
+.bar .w{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.sw button{font:inherit;font-size:13px;margin-left:6px;padding:4px 12px;border-radius:99px;border:1px solid #444;background:none;color:#ddd;cursor:pointer}
+.sw button.on{background:#fff;color:#000;border-color:#fff}
+nav{position:sticky;top:42px;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font:800 20px var(--hf)}
+.logo i{width:32px;height:32px;border-radius:8px;background:var(--ac);color:var(--acx);display:grid;place-items:center;font:800 14px var(--bf);font-style:normal}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;overflow-x:auto;font-size:15px;color:var(--mut)}
+nav ul a:hover{color:var(--tx)}
+.btn{display:inline-block;padding:11px 22px;border-radius:8px;background:var(--ac);color:var(--acx);font-weight:700;white-space:nowrap}
+.btn.o{background:none;color:var(--tx);border:1px solid var(--line)}
+.hero{padding:84px 0 64px;background:radial-gradient(900px 400px at 85% 0,color-mix(in srgb,var(--ac) 18%,transparent),transparent)}
+.hero .w{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.kick{color:var(--ac);font-weight:700;letter-spacing:.08em;font-size:13px;text-transform:uppercase}
+h1{font:800 clamp(34px,5.4vw,62px)/1.2 var(--hf);margin:12px 0 18px}
+h1 em{font-style:normal;color:var(--ac)}
+.lead{color:var(--mut);max-width:520px;font-size:17px}
+.cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.next{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.next small{color:var(--ac);font-weight:700}
+.next h3{font:700 21px/1.4 var(--hf);margin:8px 0 14px}
+.cd{display:flex;gap:10px}.cd div{flex:1;text-align:center;background:var(--bg2);border-radius:10px;padding:10px 0;font:800 24px var(--hf)}.cd span{display:block;font:400 11px var(--bf);color:var(--mut)}
+.stats{border-block:1px solid var(--line);background:var(--bg2)}
+.stats .w{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-block:26px;text-align:center}
+.stats b{font:800 34px var(--hf);color:var(--ac);display:block}.stats span{color:var(--mut);font-size:14px}
+section{padding:72px 0}
+.hd{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+.hd h2{font:800 clamp(26px,3.6vw,38px) var(--hf);margin:4px 0 0}
+.hd a{color:var(--ac);font-weight:700}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:var(--ac)}
+.ph{aspect-ratio:16/10;background:linear-gradient(135deg,color-mix(in srgb,var(--ac) 35%,var(--bg2)),var(--bg2));display:grid;place-items:center;color:color-mix(in srgb,var(--tx) 40%,transparent);font-size:13px;position:relative}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.ph.v::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}.ph .play{position:relative;z-index:1}
+.card .b{padding:16px 18px 20px}.tag{font-size:12px;color:var(--ac);font-weight:700}
+.card h3{font:700 18px/1.45 var(--hf);margin:6px 0 4px}.card p{margin:0;color:var(--mut);font-size:14px}
+.feat{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr}.feat .ph{aspect-ratio:auto;min-height:220px}
+.alt{background:var(--bg2);border-block:1px solid var(--line)}
+.ev{display:grid;grid-template-columns:84px 1fr auto;gap:20px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}
+.dt{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 0;font:800 28px/1 var(--hf)}.dt small{display:block;font:500 12px var(--bf);color:var(--ac);margin-top:4px}
+.ev h3{margin:0;font:700 19px var(--hf)}.ev p{margin:2px 0 0;color:var(--mut);font-size:14px}
+.vid{display:grid;grid-template-columns:1.6fr 1fr;gap:20px}
+.big .ph{aspect-ratio:16/9;border-radius:14px}
+.play{width:62px;height:62px;border-radius:50%;background:var(--ac);color:var(--acx);display:grid;place-items:center;font-size:22px;padding-left:4px}
+.list{display:grid;gap:14px}.list .card{display:grid;grid-template-columns:130px 1fr}.list .ph{aspect-ratio:auto}.list .play{width:36px;height:36px;font-size:13px}
+.pod{display:grid;gap:12px}
+.ep{display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+.ep .play{width:48px;height:48px;font-size:16px}.ep h3{margin:0;font:700 17px var(--hf)}.ep p{margin:0;color:var(--mut);font-size:13px}
+.pills{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}.pills span{padding:6px 14px;border:1px solid var(--line);border-radius:99px;font-size:14px;color:var(--mut)}.pills span:first-child{background:var(--ac);color:var(--acx);border-color:var(--ac)}
+.act{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.act .card{padding:26px}.act h3{font:700 20px var(--hf);margin:0 0 10px}.act li{color:var(--mut);margin:4px 0}.act ul{padding-left:18px;margin:0}
+footer{background:#000;color:#cfcdc6;padding:48px 0 28px;font-size:14px}footer .w{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}footer h4{color:#fff;margin:0 0 8px}
+.note{font-size:12px;color:var(--mut);text-align:center;padding:14px;border-top:1px solid var(--line)}
+@media(max-width:860px){nav ul{display:none}.hero .w,.vid,footer .w{grid-template-columns:1fr}.g3,.act{grid-template-columns:1fr}.feat{grid-column:auto;grid-template-columns:1fr}.stats .w{grid-template-columns:repeat(2,1fr)}.ev{grid-template-columns:70px 1fr}.ev .btn{grid-column:2}.list .card{grid-template-columns:100px 1fr}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="w"><span>Design direction ›</span><div class="sw"><button class="on" data-t="brass">১ · Black &amp; Brass</button><button data-t="teal">২ · Ink &amp; Teal</button><button data-t="paper">৩ · Paper &amp; Oxblood</button></div></div></div>
+<nav><div class="w"><a class="logo" href="#"><i>DFH</i>ডিবেট ফর হিউম্যানিটি</a>
+<ul><li><a href="#news">সংবাদ</a></li><li><a href="#upcoming">আসছে</a></li><li><a href="#videos">ভিডিও</a></li><li><a href="#podcast">পডকাস্ট</a></li><li><a href="#act">কর্মকান্ড</a></li><li><a href="#">যোগাযোগ</a></li></ul>
+<a class="btn" href="#">যুক্ত হোন</a></div></nav>
+
+<header class="hero"><div class="w"><div>
+<div class="kick">Debate for Humanity · Bangladesh</div>
+<h1>যুক্তিতে গড়ি <em>মানবতার</em> পথ</h1>
+<p class="lead">বাংলাদেশের অন্যতম জাতীয় বিতর্ক সংগঠন। কর্মশালা, প্রতিযোগিতা ও সম্মেলনের মাধ্যমে দেশজুড়ে বিশ্ববিদ্যালয় ও কলেজের বিতর্ক ক্লাবগুলোকে এক সুতোয় বাঁধছি।</p>
+<div class="cta"><a class="btn" href="#upcoming">আসন্ন আয়োজন</a><a class="btn o" href="#videos">▶ ভিডিও দেখুন</a></div></div>
+<aside class="next"><small>পরবর্তী আয়োজন</small><h3>জাতীয় আন্তঃবিশ্ববিদ্যালয় মানবাধিকার বিতর্ক প্রতিযোগিতা</h3>
+<div class="cd"><div>১২<span>দিন</span></div><div>০৮<span>ঘণ্টা</span></div><div>৩০<span>মিনিট</span></div></div>
+<p style="color:var(--mut);font-size:14px;margin:14px 0 0">নিবন্ধন চলছে · ঢাকা</p></aside></div></header>
+
+<div class="stats"><div class="w"><div><b>৫০০+</b><span>বিতর্ক ক্লাব সংযুক্ত</span></div><div><b>৬৪</b><span>জেলায় কার্যক্রম</span></div><div><b>১২০+</b><span>প্রতিযোগিতা</span></div><div><b>৮ বছর+</b><span>পথচলা</span></div></div></div>
+
+<section id="news"><div class="w"><div class="hd"><div><div class="kick">সংবাদ · News</div><h2>আমরা যা করছি</h2></div><a href="#">সব সংবাদ →</a></div>
+<div class="g3">
+<a class="card feat" href="#"><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/09/DFH-22-Sep-2017-3.jpg" alt="DFH program photo" loading="lazy" onerror="this.remove()"></div><div class="b"><span class="tag">জাতীয় প্রতিযোগিতা</span><h3>৪র্থ জাতীয় আন্তঃকলেজ পরিবেশ বিতর্ক প্রতিযোগিতা ২০২২</h3><p>২২–২৩ জুলাই · বেগম বদরুন্নেসা সরকারি মহিলা কলেজ, ঢাকা</p></div></a>
+<a class="card" href="#"><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-4.jpg" alt="DFH program photo" loading="lazy" onerror="this.remove()"></div><div class="b"><span class="tag">কর্মশালা</span><h3>ঢাকা বিভাগীয় স্কুল ও কলেজ বিতর্ক কর্মশালা</h3></div></a>
+<a class="card" href="#"><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-5.jpg" alt="DFH program photo" loading="lazy" onerror="this.remove()"></div><div class="b"><span class="tag">লিগ</span><h3>মিরপুর আঞ্চলিক সংসদীয় বিতর্ক লিগ</h3></div></a>
+<a class="card" href="#"><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-6.jpg" alt="DFH program photo" loading="lazy" onerror="this.remove()"></div><div class="b"><span class="tag">আন্তঃবিশ্ববিদ্যালয়</span><h3>জাতীয় অর্থনীতি বিতর্ক প্রতিযোগিতা</h3></div></a>
+<a class="card" href="#"><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-3.jpg" alt="DFH program photo" loading="lazy" onerror="this.remove()"></div><div class="b"><span class="tag">দিবস</span><h3>আন্তঃকলেজ ভাষা দিবস বিতর্ক</h3></div></a>
+</div></div></section>
+
+<section id="upcoming" class="alt"><div class="w"><div class="hd"><div><div class="kick">আসছে · Upcoming</div><h2>সামনের আয়োজন</h2></div><a href="#">ক্যালেন্ডার →</a></div>
+<div class="ev"><div class="dt">১৫<small>নভে</small></div><div><h3>জাতীয় আন্তঃবিশ্ববিদ্যালয় মানবাধিকার বিতর্ক</h3><p>ঢাকা · নিবন্ধন চলছে</p></div><a class="btn" href="#">নিবন্ধন</a></div>
+<div class="ev"><div class="dt">২২<small>নভে</small></div><div><h3>জাতীয় আন্তঃস্কুল নারী বিতর্ক প্রতিযোগিতা</h3><p>ভেন্যু শীঘ্রই ঘোষণা</p></div><a class="btn o" href="#">বিস্তারিত</a></div>
+<div class="ev"><div class="dt">০৬<small>ডিসে</small></div><div><h3>সাপ্তাহিক স্কুল বিতর্ক কর্মশালা</h3><p>প্রতি বৃহস্পতি, শুক্র, শনিবার · আঞ্চলিক স্কুল</p></div><a class="btn o" href="#">বিস্তারিত</a></div>
+</div></section>
+
+<section id="videos"><div class="w"><div class="hd"><div><div class="kick">ইউটিউব · Videos</div><h2>মঞ্চের মুহূর্ত</h2></div><a href="#">চ্যানেলে যান →</a></div>
+<div class="vid"><a class="big card" href="#"><div class="ph v"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-6.jpg" alt="DFH video thumbnail" loading="lazy" onerror="this.remove()"><div class="play">▶</div></div><div class="b"><h3>গ্র্যান্ড ফাইনাল · পরিবেশ বিতর্ক ২০২২</h3><p>৪২ মিনিট</p></div></a>
+<div class="list"><a class="card" href="#"><div class="ph v"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-2.jpg" alt="DFH video thumbnail" loading="lazy" onerror="this.remove()"><div class="play">▶</div></div><div class="b"><h3>সেমিফাইনাল হাইলাইটস</h3><p>৮ মিনিট</p></div></a><a class="card" href="#"><div class="ph v"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-3.jpg" alt="DFH video thumbnail" loading="lazy" onerror="this.remove()"><div class="play">▶</div></div><div class="b"><h3>কর্মশালার ঝলক</h3><p>৫ মিনিট</p></div></a><a class="card" href="#"><div class="ph v"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-5.jpg" alt="DFH video thumbnail" loading="lazy" onerror="this.remove()"><div class="play">▶</div></div><div class="b"><h3>ভলান্টিয়ার কনভেনশন</h3><p>১২ মিনিট</p></div></a></div></div></div></section>
+
+<section id="podcast" class="alt"><div class="w"><div class="hd"><div><div class="kick">বিতর্ক কথন · Learn &amp; Listen</div><h2>টিউটোরিয়াল, সাক্ষাৎকার ও পডকাস্ট</h2></div></div>
+<div class="pills"><span>সব</span><span>টিউটোরিয়াল</span><span>সাক্ষাৎকার</span><span>পডকাস্ট</span></div>
+<div class="pod">
+<div class="ep"><div class="play">▶</div><div><h3>এপিসোড ১২: রিবাটাল কীভাবে সাজাবেন</h3><p>টিউটোরিয়াল · ১৮ মিনিট</p></div><a class="btn o" href="#">শুনুন</a></div>
+<div class="ep"><div class="play">▶</div><div><h3>এপিসোড ১১: চ্যাম্পিয়ন বক্তার সাথে আড্ডা</h3><p>সাক্ষাৎকার · ৩২ মিনিট</p></div><a class="btn o" href="#">শুনুন</a></div>
+<div class="ep"><div class="play">▶</div><div><h3>এপিসোড ১০: বিতর্ক ও গণতন্ত্র</h3><p>পডকাস্ট · ৪৫ মিনিট</p></div><a class="btn o" href="#">শুনুন</a></div>
+</div></div></section>
+
+<section id="act"><div class="w"><div class="hd"><div><div class="kick">কর্মকান্ড</div><h2>নিয়মিত কার্যক্রম</h2></div></div>
+<div class="act"><div class="card"><h3>বিতর্ক কর্মশালা</h3><ul><li>আঞ্চলিক</li><li>জেলা</li><li>বিভাগীয়</li></ul></div><div class="card"><h3>বিতর্ক প্রতিযোগিতা</h3><ul><li>আঞ্চলিক লিগ</li><li>জাতীয় প্রতিযোগিতা</li><li>বারোয়ারি বিতর্ক</li></ul></div><div class="card"><h3>সামাজিক উদ্যোগ</h3><ul><li>সবুজ বিতর্ক উৎসব</li><li>দিবস উদযাপন</li><li>ভলান্টিয়ার কনভেনশন</li></ul></div></div></div></section>
+
+<footer><div class="w"><div><h4>ডিবেট ফর হিউম্যানিটি</h4>৩৫৫/১ (৪র্থ তলা), দিলু রোড, মগবাজার, ঢাকা – ১২১৭</div><div><h4>যোগাযোগ</h4>debateforhumanity@gmail.com<br>০১৬৭৪৬৪৪৫৯৯</div><div><h4>অনুসরণ করুন</h4>Facebook · YouTube</div></div></footer>
+<div class="note">কনসেপ্ট প্রিভিউ · তারিখ ও সংখ্যা নমুনা মাত্র · ছবি dfhbd.org থেকে</div>
+<script>
+document.querySelectorAll('.sw button').forEach(function(b){b.addEventListener('click',function(){
+document.documentElement.dataset.theme=b.dataset.t;
+document.querySelectorAll('.sw button').forEach(function(x){x.classList.toggle('on',x===b)});});});
+</script>
+</body>
+</html>
