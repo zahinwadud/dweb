@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="sand">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DFH – Redesign Concepts</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&family=Noto+Serif+Bengali:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--frame:#0b0b0c;--panel:#e7e1d1;--mid:#77705e;--ink:#121212;--mut:#6b6a64;--line:#e6e3da;--hf:'Noto Serif Bengali',Georgia,serif;--bf:'Tiro Bangla','Noto Serif Bengali',serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+[data-theme=sage]{--frame:#121a0f;--panel:#d6dcce;--mid:#6c8860}
+[data-theme=mist]{--frame:#0b0d10;--panel:#dde1e4;--mid:#5d6b78}
+*{box-sizing:border-box}
+body{margin:0;padding:0 14px 14px;background:var(--frame);color:var(--ink);font:400 15px/1.65 var(--bf)}
+a{color:inherit;text-decoration:none}
+.bar{max-width:1180px;margin:0 auto;padding:12px 6px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;color:#cfcdc6;font-size:13px}
+.bar button{font:inherit;font-size:12px;margin-left:6px;padding:4px 12px;border-radius:99px;border:1px solid #555;background:none;color:#ddd;cursor:pointer}
+.bar button.on{background:#fff;color:#000;border-color:#fff}
+.page{max-width:1180px;margin:0 auto;background:#fff;border-radius:22px;overflow:hidden}
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,color-mix(in srgb,var(--panel) 78%,#000),var(--panel))}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pill{display:inline-block;padding:9px 18px;border-radius:99px;font-size:13px;font-weight:500}
+.pill.d{background:var(--ink);color:#fff}.pill.l{background:rgba(255,255,255,.65)}
+.logo{display:flex;align-items:center;gap:8px;font:600 18px var(--hf)}
+.logo i{width:26px;height:26px;border-radius:8px;background:var(--ink);color:var(--panel);display:grid;place-items:center;font:600 10px var(--bf);font-style:normal}
+/* hero */
+.hero{background:var(--panel);padding:20px 28px 0}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:12px}
+.hh{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding:56px 8px 36px}
+h1{font:600 clamp(34px,5.4vw,60px)/1.25 var(--hf);letter-spacing:-.01em;margin:0 0 12px}
+.sub{font-size:13px;color:#4b4a44;max-width:390px;margin:0 0 20px}
+.badge{width:118px;height:118px;flex:none;animation:spin 22s linear infinite}
+.badge text{font:500 10.5px var(--bf);letter-spacing:2px;fill:var(--ink)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.badge{animation:none}}
+.himg{height:min(34vw,360px);border-radius:20px 20px 0 0}
+/* text system */
+.s{padding:84px 32px}
+.lab{font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:7px;margin-bottom:14px}
+.lab:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ink)}
+.c{text-align:center}
+.c h2{font:600 clamp(26px,3.6vw,40px)/1.3 var(--hf);margin:0 0 10px;letter-spacing:-.01em}
+.c>p{color:var(--mut);font-size:13px;max-width:430px;margin:0 auto 18px}
+.who{display:grid;grid-template-columns:1.5fr 1fr;gap:36px}
+.big{font:500 clamp(22px,2.8vw,32px)/1.4 var(--hf);margin:0 0 28px;letter-spacing:-.01em}
+.st{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.st div{border:1px solid var(--line);border-radius:14px;padding:18px 10px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.04)}
+.st b{font:500 28px var(--hf);display:block}.st span{font-size:11px;color:var(--mut)}
+.tiles{display:grid;gap:14px}.tiles .ph{border-radius:14px;aspect-ratio:4/3}
+/* upcoming */
+.pan{background:var(--panel);border-radius:24px;padding:56px 32px;margin:0 20px}
+.ev{display:grid;grid-template-columns:72px 1fr auto;gap:18px;align-items:center;background:#fff;border-radius:16px;padding:14px 18px;margin:0 auto 10px;max-width:820px;text-align:left}
+.dt{background:var(--panel);border-radius:12px;text-align:center;padding:8px 0;font:600 24px/1 var(--hf)}.dt small{display:block;font:400 11px var(--bf);margin-top:4px;color:var(--mut)}
+.ev h3{margin:0;font:600 17px var(--hf)}.ev p{margin:0;font-size:12px;color:var(--mut)}
+/* news / videos */
+.g2,.g3{display:grid;gap:28px 22px;margin:36px auto 0;text-align:left}
+.g2{grid-template-columns:1fr 1fr;max-width:960px}.g3{grid-template-columns:repeat(3,1fr)}
+.fig .ph{aspect-ratio:16/10;border-radius:14px}
+.fig h3{font:600 17px/1.5 var(--hf);margin:12px 0 2px}.fig p{margin:0;font-size:12px;color:var(--mut)}
+.play{position:absolute;inset:0;margin:auto;width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.9);display:grid;place-items:center;font-size:15px;padding-left:3px;z-index:2}
+/* band */
+.band{position:relative;min-height:420px;background:#1c1c1c;display:flex;align-items:flex-end;padding:40px 32px}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.72),rgba(0,0,0,.15))}
+.band h2{position:relative;z-index:1;color:#fff;font:500 clamp(24px,3.4vw,40px)/1.4 var(--hf);max-width:620px;margin:0}
+/* staggered cards */
+.stag{display:flex;justify-content:center;align-items:flex-start;margin-top:44px;text-align:left}
+.sc{width:270px;background:var(--panel);border-radius:18px;padding:18px;box-shadow:0 18px 40px rgba(0,0,0,.13);margin-left:-28px}
+.sc:first-child{margin-left:0}.sc:nth-child(2){margin-top:56px;background:#fff}.sc:nth-child(3){margin-top:112px}
+.sc .ph{height:120px;border-radius:12px;margin-bottom:12px}.sc h3{font:600 17px var(--hf);margin:0 0 4px}.sc p{margin:0;font-size:12px;color:var(--mut)}
+/* join */
+.join{background:var(--mid);padding:72px 32px;color:#fff}
+.jh{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:22px;margin-bottom:26px}
+.jh h2{font:600 clamp(26px,3.6vw,40px)/1.3 var(--hf);margin:0}.jh p{font-size:12px;max-width:260px;margin:0;opacity:.88}
+.jg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.jc{background:var(--panel);color:var(--ink);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.jc h3{font:600 18px var(--hf);margin:0}.jc p{margin:0;font-size:12px;color:var(--mut)}.jc .ph{aspect-ratio:4/3;border-radius:10px}
+.fld{background:#fff;border-radius:99px;padding:8px 14px;font-size:12px;color:var(--mut)}
+.jc .pill{text-align:center;margin-top:auto}
+/* podcast list */
+.fl{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.fl span{padding:6px 14px;border-radius:99px;border:1px solid var(--line);font-size:12px;color:var(--mut)}
+.fl span:first-child{background:var(--ink);color:#fff;border-color:var(--ink)}
+.lst{max-width:760px;margin:30px auto 0;text-align:left}
+.row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.row h3{font:500 16px var(--hf);margin:0}.row p{margin:0;font-size:12px;color:var(--mut)}.row .ar{font-size:18px;color:var(--mut)}
+/* end */
+.end{background:linear-gradient(#fff 50%,var(--frame) 50%);padding:0 28px}
+.cta2{background:var(--panel);border-radius:22px;padding:64px 20px;text-align:center}
+.cta2 h2{font:600 clamp(24px,3.4vw,38px)/1.35 var(--hf);margin:0 0 8px}.cta2 p{font-size:13px;color:var(--mut);margin:0 0 20px}
+.ft{background:var(--frame);color:#cfcdc6;padding:44px 32px 26px;display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;font-size:13px}
+.ft ul{list-style:none;margin:0;padding:0;line-height:2}.ft .logo{color:#fff}.ft .logo i{background:#fff;color:#000}.ft div:last-child{text-align:right}
+.cp{background:var(--frame);color:#8a8982;font-size:11px;padding:0 32px 22px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media(max-width:860px){nav ul{display:none}.hh{flex-direction:column}.badge{width:92px;height:92px}.who,.g2,.g3,.jg{grid-template-columns:1fr}.stag{flex-direction:column;align-items:center}.sc,.sc:nth-child(n){width:100%;margin:0 0 14px}.jh{flex-direction:column;align-items:flex-start}.ev{grid-template-columns:64px 1fr}.ev .pill{grid-column:2;justify-self:start}.ft{grid-template-columns:1fr;text-align:center}.ft div:last-child{text-align:center}.s{padding:60px 20px}.pan{margin:0 10px;padding:44px 18px}}
+</style>
+</head>
+<body>
+<div class="bar"><span>Design direction ›</span><div><button class="on" data-t="sand">১ · Black &amp; Sand</button><button data-t="sage">২ · Black &amp; Sage</button><button data-t="mist">৩ · Black &amp; Mist</button></div></div>
+<div class="page">
+
+<header class="hero">
+<nav><a class="logo" href="#"><i>DFH</i>ডিবেট ফর হিউম্যানিটি</a>
+<ul><li><a href="#">আমাদের কথা</a></li><li><a href="#upcoming">আসছে</a></li><li><a href="#news">সংবাদ</a></li><li><a href="#videos">ভিডিও</a></li><li><a href="#podcast">পডকাস্ট</a></li></ul>
+<a class="pill d" href="#">যোগাযোগ</a></nav>
+<div class="hh"><div>
+<h1>যুক্তিতে গড়ি<br>মানবতার পথ</h1>
+<p class="sub">আমরা বাংলাদেশের একটি জাতীয় বিতর্ক সংগঠন — একটি মঞ্চ, একটি সমাজ, এক প্রজন্মের যুক্তিবোধ।</p>
+<a class="pill d" href="#upcoming">আসন্ন আয়োজন</a> <a class="pill l" href="#videos">ভিডিও দেখুন</a></div>
+<svg class="badge" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="cr" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#cr">DEBATE FOR HUMANITY · বিতর্ক · মানবতা · যুক্তি ·</textPath></text><circle cx="60" cy="60" r="22" fill="#121212"/><text x="60" y="64" text-anchor="middle" style="fill:#fff;font-size:11px;letter-spacing:0">DFH</text></svg></div>
+<div class="himg ph"><img src="https://dfhbd.org/wp-content/uploads/2017/09/DFH-22-Sep-2017-3.jpg" alt="" onerror="this.remove()"></div>
+</header>
+
+<section class="s"><div class="who"><div>
+<div class="lab">আমরা কারা</div>
+<p class="big">আমরা একটি অলাভজনক জাতীয় বিতর্ক সংগঠন, যারা কর্মশালা, প্রতিযোগিতা ও সম্মেলনের মাধ্যমে দেশজুড়ে বিতর্কচর্চা ছড়িয়ে দিচ্ছি এবং বিশ্ববিদ্যালয়ের বিতর্ক ক্লাবগুলোকে একসূত্রে বাঁধছি।</p>
+<div class="st"><div><b>৫০০+</b><span>ক্লাব সংযুক্ত</span></div><div><b>৬৪</b><span>জেলায় কার্যক্রম</span></div><div><b>১২০+</b><span>প্রতিযোগিতা</span></div></div></div>
+<div class="tiles"><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-5.jpg" alt="" loading="lazy" onerror="this.remove()"></div></div></div></section>
+
+<div class="pan c" id="upcoming"><div class="lab" style="justify-content:center">আসছে</div><h2>সামনের আয়োজন</h2><p>নিবন্ধন করুন, সময়মতো প্রস্তুত থাকুন।</p>
+<div class="ev"><div class="dt">১৫<small>নভে</small></div><div><h3>জাতীয় আন্তঃবিশ্ববিদ্যালয় মানবাধিকার বিতর্ক</h3><p>ঢাকা · নিবন্ধন চলছে</p></div><a class="pill d" href="#">নিবন্ধন</a></div>
+<div class="ev"><div class="dt">২২<small>নভে</small></div><div><h3>জাতীয় আন্তঃস্কুল নারী বিতর্ক প্রতিযোগিতা</h3><p>ভেন্যু শীঘ্রই ঘোষণা</p></div><a class="pill d" href="#">বিস্তারিত</a></div>
+<div class="ev"><div class="dt">০৬<small>ডিসে</small></div><div><h3>সাপ্তাহিক স্কুল বিতর্ক কর্মশালা</h3><p>প্রতি বৃহস্পতি, শুক্র, শনিবার</p></div><a class="pill d" href="#">বিস্তারিত</a></div></div>
+
+<section class="s c" id="news"><h2>কর্মে আমরা</h2><p>আমাদের সাম্প্রতিক কর্মশালা, লিগ ও জাতীয় প্রতিযোগিতার কিছু মুহূর্ত।</p><a class="pill d" href="#">সব সংবাদ</a>
+<div class="g2">
+<a class="fig" href="#"><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/09/DFH-22-Sep-2017-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div><h3>৪র্থ জাতীয় আন্তঃকলেজ পরিবেশ বিতর্ক ২০২২</h3><p>দিনব্যাপী প্রতিযোগিতায় সারা দেশের কলেজের অংশগ্রহণ।</p></a>
+<a class="fig" href="#"><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-4.jpg" alt="" loading="lazy" onerror="this.remove()"></div><h3>ঢাকা বিভাগীয় স্কুল ও কলেজ বিতর্ক কর্মশালা</h3><p>নতুন বক্তাদের হাতে-কলমে প্রশিক্ষণ।</p></a>
+<a class="fig" href="#"><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-5.jpg" alt="" loading="lazy" onerror="this.remove()"></div><h3>মিরপুর আঞ্চলিক সংসদীয় বিতর্ক লিগ</h3><p>নিয়মিত আঞ্চলিক লিগের ধারাবাহিক আয়োজন।</p></a>
+<a class="fig" href="#"><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-6.jpg" alt="" loading="lazy" onerror="this.remove()"></div><h3>জাতীয় আন্তঃবিশ্ববিদ্যালয় অর্থনীতি বিতর্ক</h3><p>বিশ্ববিদ্যালয়গুলোর মধ্যে প্রতিযোগিতা ও সংযোগ।</p></a>
+</div></section>
+
+<div class="band"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-3.jpg" alt="" loading="lazy" onerror="this.remove()"><h2>আপনি সময় দিন, কণ্ঠ দিন বা অংশ নিন — প্রতিটি যুক্তি আমাদের এগিয়ে নেয় এক মানবিক আগামীর দিকে।</h2></div>
+
+<section class="s c" id="videos"><h2>মঞ্চের মুহূর্ত</h2><p>আমাদের ইউটিউব চ্যানেলে ফাইনাল, হাইলাইটস ও কর্মশালার ভিডিও।</p><a class="pill d" href="#">চ্যানেলে যান</a>
+<div class="g3">
+<a class="fig" href="#"><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-6.jpg" alt="" loading="lazy" onerror="this.remove()"><div class="play">▶</div></div><h3>গ্র্যান্ড ফাইনাল · পরিবেশ বিতর্ক ২০২২</h3><p>৪২ মিনিট</p></a>
+<a class="fig" href="#"><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-2.jpg" alt="" loading="lazy" onerror="this.remove()"><div class="play">▶</div></div><h3>সেমিফাইনাল হাইলাইটস</h3><p>৮ মিনিট</p></a>
+<a class="fig" href="#"><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-4.jpg" alt="" loading="lazy" onerror="this.remove()"><div class="play">▶</div></div><h3>কর্মশালার ঝলক</h3><p>৫ মিনিট</p></a>
+</div></section>
+
+<section class="s c" id="podcast" style="padding-top:0"><h2>বিতর্ক কথন</h2><p>টিউটোরিয়াল, সাক্ষাৎকার ও পডকাস্ট — শুনুন, শিখুন, তৈরি হোন।</p>
+<div class="fl"><span>সব</span><span>টিউটোরিয়াল</span><span>সাক্ষাৎকার</span><span>পডকাস্ট</span></div>
+<div class="lst">
+<a class="row" href="#"><div><h3>এপিসোড ১২: রিবাটাল কীভাবে সাজাবেন</h3><p>টিউটোরিয়াল · ১৮ মিনিট</p></div><span class="ar">↗</span></a>
+<a class="row" href="#"><div><h3>এপিসোড ১১: চ্যাম্পিয়ন বক্তার সাথে আড্ডা</h3><p>সাক্ষাৎকার · ৩২ মিনিট</p></div><span class="ar">↗</span></a>
+<a class="row" href="#"><div><h3>এপিসোড ১০: বিতর্ক ও গণতন্ত্র</h3><p>পডকাস্ট · ৪৫ মিনিট</p></div><span class="ar">↗</span></a>
+<a class="row" href="#"><div><h3>এপিসোড ০৯: জাজের চোখে ভালো কেস</h3><p>সাক্ষাৎকার · ২৮ মিনিট</p></div><span class="ar">↗</span></a>
+</div></section>
+
+<section class="s c" style="padding-top:0"><h2>শেকড় থেকে গড়ি বিতর্কের সংস্কৃতি</h2><p>স্কুল থেকে বিশ্ববিদ্যালয় — প্রতিটি স্তরে আমাদের নিয়মিত কার্যক্রম।</p>
+<div class="stag">
+<div class="sc"><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-4.jpg" alt="" loading="lazy" onerror="this.remove()"></div><h3>বিতর্ক কর্মশালা</h3><p>আঞ্চলিক, জেলা ও বিভাগীয় পর্যায়ে প্রশিক্ষণ।</p></div>
+<div class="sc"><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-5.jpg" alt="" loading="lazy" onerror="this.remove()"></div><h3>প্রতিযোগিতা</h3><p>আঞ্চলিক লিগ থেকে জাতীয় প্রতিযোগিতা।</p></div>
+<div class="sc"><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div><h3>সামাজিক উদ্যোগ</h3><p>সবুজ বিতর্ক উৎসব, দিবস উদযাপন ও ভলান্টিয়ার কনভেনশন।</p></div>
+</div></section>
+
+<section class="join"><div class="jh"><h2>পরিবর্তনের অংশ হোন</h2><p>ক্লাব, ব্যক্তি বা প্রতিষ্ঠান — যেভাবেই পারেন, আমাদের সঙ্গে যুক্ত হোন।</p></div>
+<div class="jg">
+<div class="jc"><h3>ক্লাব নিবন্ধন</h3><p>আপনার বিশ্ববিদ্যালয় বা কলেজের বিতর্ক ক্লাবকে নেটওয়ার্কে যুক্ত করুন।</p><div class="fld">ক্লাবের নাম</div><div class="fld">ইমেইল</div><a class="pill d" href="#">নিবন্ধন করুন</a></div>
+<div class="jc"><h3>ভলান্টিয়ার</h3><p>কর্মশালা ও প্রতিযোগিতার আয়োজনে আমাদের পাশে থাকুন।</p><div class="ph"><img src="https://dfhbd.org/wp-content/uploads/2017/08/news-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div><a class="pill d" href="#">যুক্ত হোন</a></div>
+<div class="jc"><h3>অংশীদার</h3><p>প্রতিষ্ঠান হিসেবে আয়োজন বা প্রকাশনায় সহযোগিতা করুন।</p><a class="pill d" href="#">যোগাযোগ করুন</a></div>
+</div></section>
+
+<div class="end"><div class="cta2"><h2>চলুন, একসাথে যুক্তির<br>মঞ্চ গড়ি</h2><p>আপনার ক্লাব, আপনার প্রতিষ্ঠান বা আপনি নিজে — সবার জন্য জায়গা আছে।</p><a class="pill d" href="#">আসন্ন আয়োজন</a> <a class="pill l" style="background:#fff" href="#">ভলান্টিয়ার হোন</a></div></div>
+<footer class="ft"><ul><li>আমাদের কথা</li><li>কর্মকান্ড</li><li>সংবাদ</li><li>ভিডিও</li></ul><a class="logo" href="#"><i>DFH</i>ডিবেট ফর হিউম্যানিটি</a><div><ul><li>debateforhumanity@gmail.com</li><li>০১৬৭৪৬৪৪৫৯৯</li><li>মগবাজার, ঢাকা – ১২১৭</li></ul></div></footer>
+<div class="cp"><span>© ডিবেট ফর হিউম্যানিটি-ডিএফএইচ</span><span>কনসেপ্ট প্রিভিউ · তারিখ ও সংখ্যা নমুনা</span></div>
+</div>
+<script>
+document.querySelectorAll('.bar button').forEach(function(b){b.addEventListener('click',function(){
+document.documentElement.dataset.theme=b.dataset.t;
+document.querySelectorAll('.bar button').forEach(function(x){x.classList.toggle('on',x===b)});});});
+</script>
+</body>
+</html>
